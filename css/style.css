@@ -329,9 +329,9 @@ progress {
   border-radius: 50%;
   background-color: rgba(139, 202, 143, 0.7725490196);
   position: fixed;
-  top: 20px;
-  right: 18px;
-  z-index: 10000;
+  top: 40px;
+  right: 40px;
+  z-index: 1000000000;
 }
 @media (width >= 670px) {
   .drawerButton {

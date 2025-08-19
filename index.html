@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <script src="js/script.js" async></script>
 </head>
 
 <body>
@@ -71,6 +72,59 @@
         </div>
         <div class="copywrite"><small>&copy; 2025 MATSUO TAKUMA</small></div>
     </footer>
+    <script>
+        // ドロワーメニュー　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+        const dButton = document.querySelector(".drawerButton");
+        const dMenu = document.querySelector(".header_nav");
+
+        // function drawerButton() {
+        //     dButton.classList.toggle("active");
+        //     dMenu.classList.toggle("active");
+        // }
+
+        // // メニューリンクをクリックしたら閉じる処理
+        // document.querySelectorAll(".drawerMenu a").forEach((link) => {
+        //     link.addEventListener("click", () => {
+        //         document.querySelector(".drawerButton").classList.remove("active");
+        //         document.querySelector(".header_nav").classList.remove("active");
+        //     });
+        // });
+
+        const openDrawer = () => {
+            dButton.classList.add("active");
+            dMenu.classList.add("active");
+            document.body.classList.add("no-scroll");
+
+            // スマホのスクロール操作を検知
+            window.addEventListener("touchmove", closeDrawer, { passive: true });
+            window.addEventListener("wheel", closeDrawer, { passive: true });
+        };
+
+        const closeDrawer = () => {
+            dButton.classList.remove("active");
+            dMenu.classList.remove("active");
+            document.body.classList.remove("no-scroll");
+
+            // 監視解除（開いてる時だけ反応させたいので）
+            window.removeEventListener("touchmove", closeDrawer);
+            window.removeEventListener("wheel", closeDrawer);
+        };
+
+        dButton.addEventListener("click", () => {
+            if (dMenu.classList.contains("active")) {
+                closeDrawer();
+            } else {
+                openDrawer();
+            }
+        });
+
+        // メニュー内リンクを押したら閉じる
+        dMenu.querySelectorAll("a").forEach(a =>
+            a.addEventListener("click", closeDrawer)
+        );
+
+    </script>
+
 </body>
 
 </html>
