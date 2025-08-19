@@ -1,0 +1,694 @@
+@charset "UTF-8";
+/* resset.dev • v5.0.2 */
+/* # =================================================================
+   # Global selectors
+   # ================================================================= */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
+  word-break: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+}
+
+*,
+::before,
+::after {
+  background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+  box-sizing: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit; /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+  vertical-align: inherit;
+}
+
+* {
+  padding: 0; /* Reset `padding` and `margin` of all elements */
+  margin: 0;
+}
+
+/* # =================================================================
+   # General elements
+   # ================================================================= */
+hr {
+  overflow: visible; /* Show the overflow in Edge and IE */
+  height: 0; /* Add the correct box sizing in Firefox */
+  color: inherit; /* Correct border color in Firefox. */
+}
+
+details,
+main {
+  display: block; /* Render the `main` element consistently in IE. */
+}
+
+summary {
+  display: list-item; /* Add the correct display in all browsers */
+}
+
+small {
+  font-size: 80%; /* Set font-size to 80% in `small` elements */
+}
+
+[hidden] {
+  display: none; /* Add the correct display in IE */
+}
+
+abbr[title] {
+  border-bottom: none; /* Remove the bottom border in Chrome 57 */
+  /* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+a {
+  background-color: transparent; /* Remove the gray background on active links in IE 10 */
+}
+
+a:active,
+a:hover {
+  outline-width: 0; /* Remove the outline when hovering in all browsers */
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace; /* Specify the font family of code elements */
+}
+
+pre {
+  font-size: 1em; /* Correct the odd `em` font sizing in all browsers */
+}
+
+b,
+strong {
+  font-weight: bolder; /* Add the correct font weight in Chrome, Edge, and Safari */
+}
+
+/* https://gist.github.com/unruthless/413930 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+table {
+  border-color: inherit; /* Correct border color in all Chrome, Edge, and Safari. */
+  text-indent: 0; /* Remove text indentation in Chrome, Edge, and Safari */
+}
+
+iframe {
+  border-style: none;
+}
+
+/* # =================================================================
+   # Forms
+   # ================================================================= */
+input {
+  border-radius: 0;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto; /* Correct the cursor style of increment and decrement buttons in Chrome */
+}
+
+[type=search] {
+  -webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari */
+  outline-offset: -2px; /* Correct the outline style in Safari */
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS */
+}
+
+textarea {
+  overflow: auto; /* Internet Explorer 11+ */
+  resize: vertical; /* Specify textarea resizability */
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit; /* Specify font inheritance of form elements */
+}
+
+optgroup {
+  font-weight: bold; /* Restore the font weight unset by the previous rule */
+}
+
+button {
+  overflow: visible; /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
+}
+
+button,
+select {
+  text-transform: none; /* Firefox 40+, Internet Explorer 11- */
+}
+
+/* Apply cursor pointer to button elements */
+button,
+[type=button],
+[type=reset],
+[type=submit],
+[role=button] {
+  cursor: pointer;
+}
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Replace focus style removed in the border reset above */
+button:-moz-focusring,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  outline: 1px dotted ButtonText;
+}
+
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button; /* Correct the inability to style clickable types in iOS */
+}
+
+/* Remove the default button styling in all browsers */
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border-style: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline-width: 0;
+}
+
+/* Style select like a standard input */
+select {
+  -moz-appearance: none; /* Firefox 36+ */
+  -webkit-appearance: none; /* Chrome 41+ */
+}
+
+select::-ms-expand {
+  display: none; /* Internet Explorer 11+ */
+}
+
+select::-ms-value {
+  color: currentColor; /* Internet Explorer 11+ */
+}
+
+legend {
+  border: 0; /* Correct `color` not being inherited in IE 8/9/10/11 */
+  color: inherit; /* Correct the color inheritance from `fieldset` elements in IE */
+  display: table; /* Correct the text wrapping in Edge and IE */
+  max-width: 100%; /* Correct the text wrapping in Edge and IE */
+  white-space: normal; /* Correct the text wrapping in Edge and IE */
+  max-width: 100%; /* Correct the text wrapping in Edge 18- and IE */
+}
+
+::-webkit-file-upload-button {
+  /* Correct the inability to style clickable types in iOS and Safari */
+  -webkit-appearance: button;
+  color: inherit;
+  font: inherit; /* Change font properties to `inherit` in Chrome and Safari */
+}
+
+/* Replace pointer cursor in disabled elements */
+[disabled] {
+  cursor: default;
+}
+
+/* # =================================================================
+   # Specify media element style
+   # ================================================================= */
+img {
+  border-style: none; /* Remove border when inside `a` element in IE 8/9/10 */
+}
+
+/* Add the correct vertical alignment in Chrome, Firefox, and Opera */
+progress {
+  vertical-align: baseline;
+}
+
+/* # =================================================================
+   # Accessibility
+   # ================================================================= */
+/* Specify the progress cursor of updating elements */
+[aria-busy=true] {
+  cursor: progress;
+}
+
+/* Specify the pointer cursor of trigger elements */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
+[aria-disabled=true] {
+  cursor: default;
+}
+
+.header_nav {
+  display: flex;
+  padding: 1rem;
+  justify-content: end;
+  gap: 2rem;
+  list-style: none;
+  min-width: 360px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.8235294118) 30%);
+  transition: 500ms;
+}
+@media (width <= 670px) {
+  .header_nav {
+    position: fixed;
+    flex-direction: column;
+    z-index: 9000;
+    background: none;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    top: -100%;
+  }
+}
+.header_nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.header_nav.active {
+  top: 0;
+}
+
+.side_nav {
+  display: none;
+}
+
+.summer_header {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.8235294118) 30%);
+}
+@media (width <= 670px) {
+  .summer_header {
+    background: none;
+    background-color: aquamarine;
+    position: fixed;
+    z-index: 9000;
+  }
+}
+
+.drawerButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(139, 202, 143, 0.7725490196);
+  position: fixed;
+  top: 20px;
+  right: 18px;
+  z-index: 10000;
+}
+@media (width >= 670px) {
+  .drawerButton {
+    display: none;
+  }
+}
+.drawerButton span {
+  display: block;
+  width: 38px;
+  height: 4px;
+  background-color: #775858;
+  border-radius: 4px;
+  position: absolute;
+  transition: 500ms;
+}
+.drawerButton span:nth-child(1) {
+  top: 11px;
+  inset-inline: 0;
+  margin-inline: auto;
+}
+.drawerButton span:nth-child(2) {
+  inset: 0;
+  margin: auto;
+}
+.drawerButton span:nth-child(3) {
+  bottom: 11px;
+  inset-inline: 0;
+  margin-inline: auto;
+}
+
+.drawerButton.active span {
+  transition: 500ms;
+}
+.drawerButton.active span:nth-child(1) {
+  inset: 50% 0;
+  transform: rotate(405deg);
+}
+.drawerButton.active span:nth-child(2) {
+  transform: scale(0);
+}
+.drawerButton.active span:nth-child(3) {
+  inset: 50% 0;
+  transform: rotate(-405deg);
+}
+
+footer .contact_mail h2 {
+  padding-block-start: 4rem;
+  margin-inline: auto;
+  margin-block-end: 3rem;
+  font-size: 3rem;
+  text-align: center;
+}
+footer .contact_mail .mail_btn {
+  display: block;
+  width: 300px;
+  padding: 0.5rem;
+  margin-block-end: 3rem;
+  margin-inline: auto;
+  border: 1px #84B5C5 solid;
+  border-radius: 40px;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: #84B5C5;
+}
+footer .footer_nav {
+  display: none;
+}
+footer .copywrite {
+  text-align: center;
+  padding-block: 0.5rem;
+  margin-block-start: 3rem;
+}
+
+#pageup {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 9999;
+}
+#pageup img {
+  padding: 0.5rem;
+  border: 2px #37383C solid;
+  border-radius: 50%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7450980392);
+}
+
+.summer_footer {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.831372549) 15%);
+}
+
+:root {
+  /* 切り替え間隔（ミリ秒） */
+  --interval: 30000;
+  /* フェード時間（ミリ秒） */
+  --fade: 1200;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* 背景用の2レイヤー */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.142);
+  background-blend-mode: lighten;
+  transition: opacity calc(var(--fade) * 1ms) ease;
+  will-change: opacity, background-image;
+  z-index: -1;
+}
+
+/* 下地（常に表示） */
+#bgA {
+  opacity: 1;
+}
+
+/* 上に重ねるフェード用 */
+#bgB {
+  opacity: 0;
+}
+
+.horizontal-container {
+  display: flex;
+  width: 200vw;
+  cursor: grab;
+  position: relative;
+  height: auto;
+  align-items: flex-start;
+}
+
+.pagination {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+@media (width <= 670px) {
+  .pagination {
+    display: none;
+  }
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #333;
+}
+
+.panel {
+  position: relative;
+  flex: 0 0 100vw;
+  /* 画面幅いっぱい */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  border-radius: 0;
+}
+
+/* 共通矢印 */
+.panel::after,
+.panel::before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  pointer-events: none;
+  /* 装飾のみ */
+}
+@media (width <= 670px) {
+  .panel::after,
+  .panel::before {
+    color: #333;
+  }
+}
+
+/* 右矢印 */
+.panel::after {
+  content: "▶";
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.537254902);
+  font-size: 3rem;
+  right: 10%;
+}
+@media (width <= 900px) {
+  .panel::after {
+    content: none;
+  }
+}
+
+/* 左矢印 */
+.panel::before {
+  content: "◀";
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.537254902);
+  font-size: 3rem;
+  left: 10%;
+}
+@media (width <= 900px) {
+  .panel::before {
+    content: none;
+  }
+}
+
+/* 1枚目は左矢印なし */
+.panel:first-child::before {
+  content: none;
+}
+
+/* 最後は右矢印なし */
+.panel:last-child::after {
+  content: none;
+}
+
+.diary_wrap {
+  display: flex;
+  align-items: center;
+  background-color: rgb(203, 246, 255);
+  flex-direction: column;
+  padding: 1rem;
+  margin-inline: auto;
+  width: 600px;
+  height: 900px;
+  border-radius: 5px;
+  gap: 8px;
+  box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.4078431373);
+  background-color: #ffffff;
+  z-index: 100;
+  background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+  background-repeat: repeat;
+}
+@media (width <= 670px) {
+  .diary_wrap {
+    max-width: 100vw;
+    height: auto;
+    box-shadow: none;
+  }
+}
+.diary_wrap .diary_title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.diary_wrap .diary_title h2:nth-child(1) {
+  font-size: 2rem;
+  margin-inline-start: 1rem;
+}
+@media (width <= 670px) {
+  .diary_wrap .diary_title h2:nth-child(1) {
+    display: none;
+  }
+}
+.diary_wrap .diary_title h2:nth-child(2) {
+  padding: 8px;
+  font-family: "Zen Kurenaido", "Zen Kaku Gothic New", sans-serif;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+.diary_wrap img {
+  background-color: #fcfcfc;
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.diary_wrap video {
+  background-color: #fcfcfc;
+  width: 100%;
+  height: 400px;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.diary_wrap .vertical-text {
+  background-color: #fcfcfc;
+  text-align: start;
+  width: 100%;
+  padding: 1rem;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: "Zen Kurenaido", "Zen Kaku Gothic New", sans-serif;
+  font-size: 1.3rem;
+  line-height: 3rem;
+  -webkit-text-decoration: underline 1px solid rgba(128, 128, 128, 0.521);
+          text-decoration: underline 1px solid rgba(128, 128, 128, 0.521);
+  border-radius: 5px;
+}
+@media (width <= 670px) {
+  .diary_wrap .vertical-text {
+    writing-mode: horizontal-tb;
+  }
+}
+.diary_wrap .vertical-text a {
+  font-weight: bold;
+  color: #c41313;
+}
+.diary_wrap .vertical-text a.linkImg:hover {
+  position: relative;
+  text-decoration: none;
+}
+.diary_wrap .vertical-text a.linkImg span {
+  display: none;
+  position: absolute;
+  top: 2.5em;
+  right: 1opx;
+}
+.diary_wrap .vertical-text a.linkImg:hover span {
+  border: none;
+  display: block;
+  width: 300px;
+}
+
+html {
+  overflow-x: hidden;
+  /* 横スクロールは可能にする */
+  overflow-y: scroll;
+}
+@media (width <= 670px) {
+  html::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  background-color: #fcfcfc;
+  font-family: "YakuHanJP_Narrow", "Zen Kaku Gothic New", sans-serif;
+  color: #37383C;
+  text-align: center;
+  line-height: 1.7rem;
+  min-height: 100vh;
+}
+body p {
+  font-size: 1rem;
+}
+body a {
+  color: #37383C;
+}
+body small {
+  font-size: 0.6rem;
+}/*# sourceMappingURL=style.css.map */
