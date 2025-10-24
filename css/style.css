@@ -667,7 +667,6 @@ body {
 html {
   overflow-x: hidden;
   /* 横スクロールは可能にする */
-  overflow-y: scroll;
 }
 @media (width <= 670px) {
   html::-webkit-scrollbar {
@@ -682,6 +681,8 @@ body {
   text-align: center;
   line-height: 1.7rem;
   min-height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 body p {
   font-size: 1rem;
