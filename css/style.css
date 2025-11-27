@@ -665,7 +665,7 @@ body {
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: auto;
   /* 横スクロールは可能にする */
 }
 @media (width <= 670px) {
